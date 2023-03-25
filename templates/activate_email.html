@@ -1,0 +1,7 @@
+{% autoescape off %}
+    Hello {{ user.username }},
+
+    to end registration click the link below:
+
+    {{ protocol }}://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+{% endautoescape %}

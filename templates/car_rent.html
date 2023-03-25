@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}
+    Rent {{ car.producer }} {{ car.type }}
+{% endblock %}
+{% block content %}
+    {% if form.errors %}
+        {% for key, value in form.errors.items %}
+            <div class="message" id="error">
+                <p>{{ value }}</p>
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="container">
+        <div class="form">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <h2>Rent {{ car.producer }} {{ car.type }}</h2>
+                {{ form.rental }}
+                {{ form.pesel }}
+                {{ form.start_date }}
+                {{ form.end_date }}
+                <div id="fuel">
+                    <div id="left">Add fuel?</div>
+                    <div id="right">{{ form.add_fuel }}</div>
+                </div>
+                <input type="submit" value="Rent" id="login">
+            </form>
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,18 @@
+<div id="nav_div">
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about_us' %}">About us</a></li>
+            <li><a href="{% url 'cars' %}">Cars</a></li>
+            <li><a href="{% url 'rentals' %}">Our rentals</a></li>
+            {% if user.is_authenticated %}
+                <li class="nav_right"><a href="{% url 'logout' %}">Logout</a></li>
+                <li class="nav_right"><a href="{% url 'profile' user.username %}">Hello, {{ request.user }}</a></li>
+            {% else %}
+                <li class="nav_right"><a href="{% url 'login' %}">Login</a></li>
+            {% endif %}
+        </ul>
+
+
+    </nav>
+</div>

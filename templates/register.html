@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Register{% endblock %}
+{% block content %}
+    {% if form.errors %}
+        {% for key, value in form.errors.items %}
+            <div class="message" id="error">
+                {% if key == 'password2' %}
+                    <p>Password</p>
+                    <p>{{ value }}</p>
+                {% else %}
+                    <p>{{ key }}</p>
+                    <p>{{ value }}</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="container">
+        <div class="form">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <h2>Register</h2>
+                {{ form.username }}
+                {{ form.email }}
+                {{ form.password1 }}
+                {{ form.password2 }}
+                <input type="submit" name="register" id="login" value="register">
+            </form>
+
+            <p>You have an account? <a href="{% url 'login' %}">Login</a></p>
+        </div>
+    </div>
+{% endblock %}

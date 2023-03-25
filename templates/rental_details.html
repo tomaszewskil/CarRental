@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}{{ rental.name }}{% endblock %}
+{% block content %}
+    <div class="title_div"><h1>{{ rental.name }}</h1></div>
+    <div class="container">
+        <div class="img_desc">
+            <div class="img">
+                <img alt="rental" src="{{ rental.image.url }}" height="360px" width="600px"/>
+            </div>
+            <div class="desc">
+                <h3>About {{ rental.name }}</h3>
+                <p>{{ rental.description }}</p>
+            </div>
+        </div>
+        <div class="hours_contact">
+            <div class="open_hours">
+                <h3>Open hours</h3>
+                <p>{{ rental.open_hours|linebreaks }}</p>
+            </div>
+            <div class="contact">
+                <h3>Contact</h3>
+                <p><b>Address:</b>
+                    {% if rental.street_number != None %}
+                        {{ rental.street }} {{ rental.street_number }}
+                    {% else %}
+                        {{ rental.street }}
+                    {% endif %}</p>
+                <p><b>City:</b> {{ rental.post_code }} {{ rental.city }}</p>
+                {% if rental.phone != None %}
+                    <p><b>Phone:</b> {{ rental.phone }}</p>
+                {% endif %}
+                {% if rental.email != None %}
+                    <p><b>Email:</b> {{ rental.email }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

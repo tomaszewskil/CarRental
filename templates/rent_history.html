@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Rent History{% endblock %}
+{% block content %}
+    <div class="title_div"><h1>Rent history</h1></div>
+    <div class="container">
+        <div id="rent_history">
+            <table>
+                <tr>
+                    <th class="car_name">Car</th>
+                    <th class="date">Start date</th>
+                    <th class="date">End date</th>
+                </tr>
+                {% for record in history %}
+                    {% if date <= record.end_date and date >= record.start_date %}
+                        <tr class="active">
+                            <td class="active car_name">{{ record.car }}</td>
+                            <td class="active date">{{ record.start_date }}</td>
+                            <td class="active date">{{ record.end_date }}</td>
+                        </tr>
+                    {% elif date <= record.end_date %}
+                        <tr class="future">
+                            <td class="future car_name">{{ record.car }}</td>
+                            <td class="future date">{{ record.start_date }}</td>
+                            <td class="future date">{{ record.end_date }}</td>
+                        </tr>
+                    {% else %}
+                        <tr class="finished">
+                            <td class="finished car_name">{{ record.car }}</td>
+                            <td class="finished date">{{ record.start_date }}</td>
+                            <td class="finished date">{{ record.end_date }}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

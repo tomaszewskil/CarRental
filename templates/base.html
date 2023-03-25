@@ -1,0 +1,38 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+<script src="{% static 'slides.js' %}"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+
+</head>
+<body>
+{% include "nav.html" %}
+
+<div id="main_div">
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'error' %}
+                <div class="message" id="error">
+                    {{ message }}
+                </div>
+            {% elif message.tags == 'success' %}
+                <div class="message" id="success">
+                    {{ message }}
+                </div>
+            {% else %}
+                <div class="message">
+                    {{ message }}
+                </div>
+            {% endif %}
+
+        {% endfor %}
+    {% endif %}
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+</html>

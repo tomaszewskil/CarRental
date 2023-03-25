@@ -1,0 +1,562 @@
+* {
+    font-family: Arial, sans-serif;
+}
+
+div {
+    overflow: hidden;
+}
+
+.container {
+    padding-bottom: 3%;
+}
+
+/* main */
+#main_div {
+    top: 60px;
+    position: relative;
+    width: 100%;
+}
+
+/* nav */
+#nav_div {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+nav li {
+    float: left;
+}
+
+nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: black;
+}
+
+.nav_right {
+    float: right;
+}
+
+/* title */
+.title_div {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    background-color: gray;
+}
+
+/* row */
+.row_div {
+    width: 100%;
+    position: relative;
+    border-bottom: black solid 1px;
+    padding: 10px 0;
+    height: 140px;
+    display: table;
+    max-width: 100%;
+}
+
+.row_div:last-child {
+    border-bottom: none;
+}
+
+.col_div {
+    display: table-cell;
+    height: 100%;
+    width: 25%;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 2vw;
+    max-width: 25vw;
+    padding: 1%;
+    text-overflow: ellipsis;
+}
+
+.col_div img {
+    height: 100%;
+    width: 100%;
+}
+
+.col_div a {
+    color: black;
+    text-decoration: none;
+    background-color: blanchedalmond;
+    width: min-content;
+    white-space: pre;
+}
+
+div.col_div a:hover {
+    background-color: burlywood;
+}
+
+/* car filters */
+div#car_filters {
+    width: 70%;
+    background-color: blanchedalmond;
+    margin: 3% 15%;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#car_filters h2 {
+    text-align: center;
+}
+
+table#car_filters {
+    width: 100%;
+    padding: 0 10%;
+}
+
+table#car_filters td {
+    width: 50%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#id_producer {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 2vw;
+}
+
+#id_fuel, #id_drive, #id_gearbox, #id_price {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 2vw;
+}
+
+#car_filters button, #car_filters a {
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    font-size: 2vw;
+    padding: 2.5px;
+    border: black solid 1px;
+}
+
+#car_filters button {
+    background-color: lightgreen;
+}
+
+#car_filters a {
+    text-decoration: none;
+    color: black;
+    background-color: lightcoral;
+}
+
+/* rental page */
+div.img_desc {
+    position: relative;
+    margin: 3% 0;
+    display: table;
+    width: 100%;
+}
+
+
+div.img {
+    width: 40%;
+    left: 3%;
+    display: table-cell;
+}
+
+div.img img {
+    width: 100%;
+    height: 100%;
+}
+
+div.desc {
+    width: 50%;
+    height: 100%;
+    font-size: 2vw;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    padding: 2%;
+    max-width: 50vw;
+}
+
+h3 {
+    margin-top: 0;
+    display: inline;
+    background-color: blanchedalmond;
+}
+
+div.hours_contact {
+    position: relative;
+    display: table;
+    width: 100%;
+    margin-top: 3%;
+    border-top: black solid 1px;
+    padding: 3% 0;
+}
+
+div.open_hours {
+    position: relative;
+    font-weight: bold;
+    width: 45%;
+    left: 5%;
+    text-align: center;
+    display: table-cell;
+    height: 100%;
+}
+
+div.contact {
+    display: table-cell;
+    text-align: center;
+}
+
+/* car page */
+
+.car_col p {
+    font-weight: bold;
+}
+
+#car_desc {
+    display: table;
+    width: 100%;
+    margin-top: 12%;
+}
+
+.car_col {
+    display: table-cell;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+}
+
+#rent {
+    text-decoration: none;
+    color: black;
+    background-color: lightgreen;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    font-size: 2vw;
+    padding: 2.5px;
+    border: black solid 1px;
+}
+
+#car_rentals {
+    text-align: center;
+    font-weight: bold;
+    height: 20%;
+}
+
+#car_rentals_col {
+    display: table;
+    width: 100%;
+}
+
+
+#car_rentals_col div {
+    display: table-cell;
+    max-width: 10vw;
+    font-size: 2vw;
+}
+
+/* messages */
+
+div.message {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    background-color: blanchedalmond;
+    font-size: 2vw;
+
+}
+
+div#success {
+    background-color: lightgreen;
+}
+
+div#error {
+    background-color: lightcoral;
+}
+
+/* about page */
+
+#about_us {
+    height: 100%;
+    font-size: 2vw;
+    padding: 0 3% 15% 3%;
+}
+
+#about_us img {
+    float: left;
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    border: solid black 1px;
+}
+
+/* login page */
+div.form {
+    position: relative;
+    max-width: 50%;
+    background-color: blanchedalmond;
+    margin: 5% auto 0;
+    padding: 2%;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+div.form input {
+    width: 100%;
+    border: 0;
+    margin: 1%;
+    padding: 3%;
+    font-size: 2vw;
+    text-align: center;
+}
+
+div.form input#login {
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: lightgray;
+}
+
+div.form input#login:hover {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    background-color: gray;
+}
+
+div.form p {
+    font-size: 2vw;
+}
+
+div.form a {
+    color: black;
+    font-weight: bold;
+}
+
+/* register page */
+div#error p {
+    text-transform: capitalize;
+}
+
+/* car rent*/
+
+.form #id_rental {
+    width: 100%;
+    border: 0;
+    margin: 1%;
+    padding: 3%;
+    font-size: 2vw;
+    text-align: center;
+}
+
+.form #fuel {
+    display: table;
+    width: 100%;
+    border: 0;
+    margin: 1%;
+    padding: 3%;
+    font-size: 2vw;
+    text-align: center;
+}
+
+.form #fuel div {
+    display: table-cell;
+    width: 50%;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.form #fuel #left {
+    text-align: right;
+}
+
+.form #fuel #right {
+    float: left;
+}
+
+#id_add_fuel {
+    height: 2vw;
+    width: 2vw;
+}
+
+/* rent history */
+div#rent_history {
+    position: relative;
+    width: 100%;
+    margin-top: 3%;
+}
+
+#rent_history table {
+    width: 90%;
+    border-collapse: collapse;
+    font-size: 2vw;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0 auto 0;
+}
+
+#rent_history td, #rent_history th, #rent_history tr {
+    border: 1px black solid;
+}
+
+#rent_history .car_name {
+    width: 50%;
+}
+
+#rent_history .date {
+    width: 25%;
+}
+
+#rent_history .finished {
+    background-color: lightcoral;
+}
+
+#rent_history .active {
+    background-color: lightgreen;
+}
+
+#rent_history .future {
+    background-color: lightblue;
+}
+
+/* profile */
+div#profile #id_description {
+    width: 100%;
+    height: max-content;
+    text-align: center;
+    font-size: 2vw;
+}
+
+div#profile {
+    max-width: 80%;
+}
+
+.profile_actions {
+    width: 80%;
+    text-align: center;
+    margin: 5% auto 0;
+    display: table;
+    height: 5vw;
+}
+
+.profile_actions div {
+    height: 100%;
+    width: 50%;
+    display: table-cell;
+    background-color: lightgrey;
+    border: black 1px solid;
+    font-size: 2vw;
+    vertical-align: middle;
+}
+
+.profile_actions a {
+    text-decoration: none;
+    color: black;
+}
+
+.profile_actions a:hover {
+    color: white;
+}
+
+div.form h2 {
+    font-size: 4vw;
+}
+
+/* Home page*/
+
+.rental_slides {
+    display: none
+}
+
+.car_slides {
+    display: none
+}
+
+#first_slide {
+    display: block;
+}
+
+
+.slideshow-container {
+    width: 60vw;
+    height: 34vw;
+    position: relative;
+    margin: 1% auto 3%;
+    text-align: center;
+}
+
+.slideshow-container img {
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+}
+
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 1vw;
+    color: white;
+    font-weight: bold;
+    font-size: 2vw;
+    transition: 0.6s ease;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.text {
+    color: white;
+    font-size: 2vw;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+h2#home{
+    width: 50%;
+    font-size: 2vw;
+    text-align: center;
+    background-color: blanchedalmond;
+    margin: 3% auto 0;
+}
+
+
+
+

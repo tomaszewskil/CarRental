@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}
+    Cars
+{% endblock %}
+{% block content %}
+    <div class="title_div"><h1>Cars</h1></div>
+    <div id="car_filters">
+        <form method="get">
+            <h2>Filters</h2>
+            <table id="car_filters">
+                <tr>
+                    <td colspan="2">{{ carTypesFilter.form.producer }}</td>
+                </tr>
+                <tr>
+                    <td>{{ carTypesFilter.form.fuel }}</td>
+                    <td>{{ carTypesFilter.form.gearbox }}</td>
+                </tr>
+                <tr>
+                    <td>{{ carTypesFilter.form.drive }}</td>
+                    <td>{{ carTypesFilter.form.price }}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit">Filter</button>
+                        <a href="{% url 'cars' %}">Reset filters</a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div class="container">
+        {% for car in carTypesFilter.qs %}
+            <div class="row_div">
+                <div class="col_div"><img alt="car" src="{{ car.image.url }}"/></div>
+                <div class="col_div">{{ car.producer }} {{ car.type }}</div>
+                <div class="col_div">{{ car.price }}$/day</div>
+                <div class="col_div"><a href="{% url 'car_detail' car.id %}">More info</a></div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

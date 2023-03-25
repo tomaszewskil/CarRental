@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}
+    Home page
+{% endblock %}
+{% block content %}
+    <div class="title_div"><h1>Home page</h1></div>
+    <div class="container">
+        <h2 id="home">Our rentals</h2>
+        <div class="slideshow-container">
+            {% for rental in rentals %}
+                {% if forloop.counter0 == 0 %}
+                    <div class="rental_slides fade" id="first_slide">
+                        <a href="{% url 'rental_detail'  rental.id %}">
+                            <img alt="rental" src="{{ rental.image.url }}">
+                        </a>
+                        <div class="text">{{ rental.name }}</div>
+                    </div>
+                {% else %}
+                    <div class="rental_slides fade">
+                        <a href="{% url 'rental_detail'  rental.id %}">
+                            <img alt="rental" src="{{ rental.image.url }}">
+                        </a>
+                        <div class="text">{{ rental.name }}</div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+
+            <a class="prev" onclick="next_rental(-1)">❮</a>
+            <a class="next" onclick="next_rental(1)">❯</a>
+        </div>
+        <h2 id="home">Our cars</h2>
+        <div class="slideshow-container">
+            {% for car in cars %}
+                {% if forloop.counter0 == 0 %}
+                    <div class="car_slides fade" id="first_slide">
+                        <a href="{% url 'car_detail' car.id %}">
+                            <img alt="rental" src="{{ car.image.url }}">
+                        </a>
+                        <div class="text">{{ car.producer }} {{ car.type }}</div>
+                    </div>
+                {% else %}
+                    <div class="car_slides fade">
+                        <a href="{% url 'car_detail' car.id %}">
+                            <img alt="rental" src="{{ car.image.url }}">
+                        </a>
+                        <div class="text">{{ car.producer }} {{ car.type }}</div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+
+            <a class="prev" onclick="next_car(-1)">❮</a>
+            <a class="next" onclick="next_car(1)">❯</a>
+        </div>
+    </div>
+{% endblock %}

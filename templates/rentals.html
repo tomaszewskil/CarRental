@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Rentals{% endblock %}
+{% block content %}
+    <div class="title_div"><h1>Our rentals</h1></div>
+    <div class="container">
+        {% for rental in rentals %}
+            <div class="row_div">
+                <div class="col_div"><img alt="rental" src="{{ rental.image.url }}"/></div>
+                <div class="col_div">{{ rental.name }}</div>
+                <div class="col_div">{{ rental.city }}</div>
+                <div class="col_div">
+                    <a href="{% url 'rental_detail'  rental.id %}">More info</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

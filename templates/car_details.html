@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}
+    {{ car.producer }} {{ car.type }}
+{% endblock %}
+{% block content %}
+    <div class="title_div"><h1>{{ car.producer }} {{ car.type }}</h1></div>
+    <div class="container">
+        <div class="img_desc">
+            <div class="img">
+                <img alt="car" src="{{ car.image.url }}" height="360px" width="600px"/>
+            </div>
+            <div class="desc">
+                <h3>{{ car.producer }} {{ car.type }} parameters</h3>
+                <div id="car_desc">
+                    <div class="car_col" id="car_col_l">
+                        <p>Year: {{ car.year }}</p>
+                        <p>Fuel: {{ car.fuel }}</p>
+                        <p>Seats: {{ car.seats }}</p>
+                    </div>
+                    <div class="car_col" id="car_col_r">
+                        <p>Gearbox: {{ car.gearbox }}</p>
+                        <p>Drive: {{ car.drive }}</p>
+                        <p>Price: {{ car.price }}$/day</p>
+                    </div>
+                </div>
+                <p></p>
+                {% if user.is_authenticated %}
+                    <a id="rent" href="{% url 'car_rent'  car.id %}">Click here to rent this car</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div id="car_rentals">
+        <p>Available in:</p>
+        <div id="car_rentals_col">
+            {% for rental in rentals %}
+                <div><a href="{% url 'rental_detail' rental.id %}">{{ rental.name }}</a></div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+    <div class="title_div"><h1>Profile</h1></div>
+    <div class="container">
+        <div class="profile_actions">
+            <div><a href="{% url 'rent_history' user.username %}">Rent history</a></div>
+            <div><a href="{% url 'password_change' %}">Change password</a></div>
+        </div>
+        <div class="form" id="profile">
+            <form method="POST" action="">
+                {% csrf_token %}
+                {{ form.email.label }}
+                {{ form.email }}
+
+                {{ form.first_name.label }}
+                {{ form.first_name }}
+
+                {{ form.last_name.label }}
+                {{ form.last_name }}
+
+                {{ form.description.label }}
+                {{ form.description }}
+
+                <input type="submit" name="update" value="update profile" id="login">
+            </form>
+
+        </div>
+    </div>
+{% endblock %}
